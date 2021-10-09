@@ -8,6 +8,7 @@ import java.awt.GraphicsEnvironment;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.ImageIcon;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -60,7 +61,22 @@ public class PanelProcesador extends JPanel{
     
     private void addItemMenu(String name,JMenu menu){
         
-        JMenuItem item=new JMenuItem(name);
+        JMenuItem item;
+        
+        if (name.equals("Negrita")){
+            
+            ImageIcon img=new ImageIcon("resources/bold.gif");
+            item=new JMenuItem(name,img);
+            
+        }else if (name.equals("Cursiva")){
+            
+            ImageIcon img=new ImageIcon("resources/italic.gif");
+            item = new JMenuItem(name,img);
+        }else{
+            
+            item=new JMenuItem(name);
+        }
+     
         
         item.addActionListener(new EventMenu(menu));
         menu.add(item);
