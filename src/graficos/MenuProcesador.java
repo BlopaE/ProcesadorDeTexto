@@ -13,10 +13,10 @@ public class MenuProcesador extends JFrame {
         
         screen=Toolkit.getDefaultToolkit().getScreenSize();
         
-        this.setSize(screen);
+        this.setSize(screen.width/2,screen.height/2);
         this.setTitle("Procesador de Texto");
         this.setResizable(true);
-        this.setExtendedState(MAXIMIZED_BOTH);
+        this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         
         PanelProcesador panel=new PanelProcesador();
